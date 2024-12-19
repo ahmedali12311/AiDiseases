@@ -1,3 +1,5 @@
+remove the liverprediciton from app for it to run!
+
 # My Project
 
 Images of the project:
