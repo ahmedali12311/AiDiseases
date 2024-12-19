@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidney Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label, input, select {
+            margin: 5px 0;
+        }
+        input[type="text"], select {
+            padding: 8px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Kidney Disease Prediction</h2>
+    <form action="/predict" method="post">
+        <!-- Numerical and text inputs -->
+        <label for="age">Age:</label>
+        <input type="text" name="age" id="age">
+
+        <label for="blood_pressure">Blood Pressure:</label>
+        <input type="text" name="blood_pressure" id="blood_pressure">
+
+        <label for="specific_gravity">Specific Gravity:</label>
+        <input type="text" name="specific_gravity" id="specific_gravity">
+
+        <label for="albumin">Albumin:</label>
+        <input type="text" name="albumin" id="albumin">
+
+        <label for="sugar">Sugar:</label>
+        <input type="text" name="sugar" id="sugar">
+
+        <label for="red_blood_cells">Red Blood Cells:</label>
+        <input type="text" name="red_blood_cells" id="red_blood_cells">
+
+        <label for="pus_cell">Pus Cell:</label>
+        <input type="text" name="pus_cell" id="pus_cell">
+
+        <label for="pus_cell_clumps">Pus Cell Clumps:</label>
+        <input type="text" name="pus_cell_clumps" id="pus_cell_clumps">
+
+        <label for="bacteria">Bacteria:</label>
+        <input type="text" name="bacteria" id="bacteria">
+
+        <label for="blood_glucose_random">Blood Glucose Random:</label>
+        <input type="text" name="blood_glucose_random" id="blood_glucose_random">
+
+        <label for="blood_urea">Blood Urea:</label>
+        <input type="text" name="blood_urea" id="blood_urea">
+
+        <label for="serum_creatinine">Serum Creatinine:</label>
+        <input type="text" name="serum_creatinine" id="serum_creatinine">
+
+        <label for="sodium">Sodium:</label>
+        <input type="text" name="sodium" id="sodium">
+
+        <label for="potassium">Potassium:</label>
+        <input type="text" name="potassium" id="potassium">
+
+        <label for="haemoglobin">Haemoglobin:</label>
+        <input type="text" name="haemoglobin" id="haemoglobin">
+
+        <label for="packed_cell_volume">Packed Cell Volume:</label>
+        <input type="text" name="packed_cell_volume" id="packed_cell_volume">
+
+        <label for="white_blood_cell_count">White Blood Cell Count:</label>
+        <input type="text" name="white_blood_cell_count" id="white_blood_cell_count">
+
+        <label for="red_blood_cell_count">Red Blood Cell Count:</label>
+        <input type="text" name="red_blood_cell_count" id="red_blood_cell_count">
+
+        <!-- Categorical and yes/no dropdowns -->
+        <label for="hypertension">Hypertension:</label>
+        <select name="hypertension" id="hypertension">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label for="diabetes_mellitus">Diabetes Mellitus:</label>
+        <select name="diabetes_mellitus" id="diabetes_mellitus">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label for="coronary_artery_disease">Coronary Artery Disease:</label>
+        <select name="coronary_artery_disease" id="coronary_artery_disease">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label for="appetite">Appetite:</label>
+        <select name="appetite" id="appetite">
+            <option value="0">Poor</option>
+            <option value="1">Good</option>
+        </select>
+
+        <label for="pedal_edema">Pedal Edema:</label>
+        <select name="pedal_edema" id="pedal_edema">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label for="anaemia">Anaemia:</label>
+        <select name="anaemia" id="anaemia">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

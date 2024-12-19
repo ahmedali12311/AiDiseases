@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Result</title>
+    <link rel="stylesheet" href="../static/anemiaresult.css">
+</head>
+<body>
+  
+    <div class="container">
+        <h2>نتيجة تحليل الداء السكري</h2>
+        <p class="message">استنادًا إلى المعطيات المقدمة، هذه هي نتيجة التحليل الخاصة بك.</p>
+        <p class="result">{{ prediction }}</p>
+        <button onclick="location.href='/diabetes'"  class="back-button">تحليل من جديد</button>
+        <button onclick="location.href='/'" class="back-button">الصفحة الرئيسية</button>
+    </div>
+
+</body>
+</html>

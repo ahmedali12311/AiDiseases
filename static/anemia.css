@@ -1,0 +1,167 @@
+/* Global styles specific to the anemia page */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0d0d0d, #002f4b);
+    color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    direction: rtl;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, rgba(0, 47, 75, 0.8), rgba(0, 47, 75, 0.4));
+    color: cyan;
+    text-align: center;
+    padding: 150px 0;
+    box-shadow: 0px 0px 60px rgba(0, 255, 255, 0.6);
+}
+
+/* Form container */
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Card styles for the form */
+.card {
+    background: rgba(0, 47, 75, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Form styles */
+.anemia-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.anemia-form input {
+    padding: 12px;
+    font-size: 16px;
+    color: #002f4b;
+    background: #d1faff;
+    border: 1px solid #00d4ff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.anemia-form input:focus {
+    outline: none;
+    border-color: cyan;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+}
+
+.anemia-form button {
+    background: linear-gradient(135deg, #00d4ff, #009dc4);
+    color: white;
+    padding: 15px 0;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 0px 20px rgba(0, 212, 255, 0.6);
+}
+
+.anemia-form button:hover {
+    background: linear-gradient(135deg, #009dc4, #00d4ff);
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background-color: #002f4b;
+    color: cyan;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px -10px 30px rgba(0, 255, 255, 0.4);
+    width: 100%;
+}
+.anemia-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.anemia-form label {
+    font-size: 16px;
+    color: cyan;
+    margin-bottom: 5px;
+}
+
+.anemia-form input {
+    padding: 12px;
+    border: 1px solid #00d4ff;
+    border-radius: 8px;
+    background-color: rgba(0, 47, 75, 0.8);
+    color: #ffffff;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+
+.anemia-form input:focus {
+    outline: none;
+    border-color: cyan;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+}
+header {
+    position: relative;
+    background: linear-gradient(135deg, rgba(0, 47, 75, 0.9), rgba(0, 47, 75, 0.5));
+    color: cyan; /* Bright cyan for a modern feel */
+    text-align: center;
+    padding: 20px 0; /* Adjusted padding for header */
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+header h1 {
+    font-size: 2.5rem; /* Adjusted font size */
+    margin: 0;
+    text-shadow: 0 0 20px cyan; /* Glowing text effect */
+}
+
+/* Navigation styles */
+header nav {
+    width: 100%; /* Full width */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center navigation items */
+    gap: 30px; /* Space between nav items */
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    color: cyan; /* Bright cyan */
+    text-decoration: none;
+    font-size: 1.2rem; /* Font size for nav items */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+header nav ul li a:hover {
+    color: #fff; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}

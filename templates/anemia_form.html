@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توقع فقر الدم</title>
+    <link rel="stylesheet" href="../static/anemia.css"> <!-- Link to anemia-specific CSS -->
+</head>
+<body>
+    <header>
+        <h1>تحليل الدم</h1>
+
+        <nav>
+            <ul>
+                <li><a href="/">الرئيسية</a></li>
+                <li><a href="/diabetes">توقع السكري</a></li>
+                <li><a href="/malaria">كشف الملاريا</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+    <div class="container">
+        <div class="card">
+            <form action="/anemia" method="POST" class="anemia-form">
+                <label for="WBC">WBC</label>
+                <input type="text" id="WBC" name="WBC" required>
+                
+                <label for="LYMp">LYMp</label>
+                <input type="text" id="LYMp" name="LYMp" required>
+                
+                <label for="NEUTp">NEUTp</label>
+                <input type="text" id="NEUTp" name="NEUTp" required>
+                
+                <label for="LYMn">LYMn</label>
+                <input type="text" id="LYMn" name="LYMn" required>
+                
+                <label for="NEUTn">NEUTn</label>
+                <input type="text" id="NEUTn" name="NEUTn" required>
+                
+                <label for="RBC">RBC</label>
+                <input type="text" id="RBC" name="RBC" required>
+                
+                <label for="HGB">HGB</label>
+                <input type="text" id="HGB" name="HGB" required>
+                
+                <label for="HCT">HCT</label>
+                <input type="text" id="HCT" name="HCT" required>
+                
+                <label for="MCV">MCV</label>
+                <input type="text" id="MCV" name="MCV" required>
+                
+                <label for="MCH">MCH</label>
+                <input type="text" id="MCH" name="MCH" required>
+                
+                <label for="MCHC">MCHC</label>
+                <input type="text" id="MCHC" name="MCHC" required>
+                
+                <label for="PLT">PLT</label>
+                <input type="text" id="PLT" name="PLT" required>
+                
+                <label for="PDW">PDW</label>
+                <input type="text" id="PDW" name="PDW" required>
+                
+                <label for="PCT">PCT</label>
+                <input type="text" id="PCT" name="PCT" required>
+                
+                <button type="submit">توقع</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

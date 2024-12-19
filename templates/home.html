@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>نظام توقع الصحة</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0d0d0d, #002f4b);
+            color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            direction: rtl;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Full-screen header */
+        header {
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 47, 75, 0.9), rgba(0, 47, 75, 0.5)), url('https://miro.medium.com/v2/resize:fit:1400/1*C4Xvj4KPCm1J9SLtaANWxg.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: cyan;
+            text-align: center;
+            padding: 0;
+            min-height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 60px rgba(0, 255, 255, 0.7);
+            border-bottom: 5px solid #00d4ff;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 0 0 20px cyan;
+            letter-spacing: 2px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Navigation styles */
+        header nav {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        header nav ul li a {
+            color: cyan;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* New section: what the page provides */
+        .provides-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            background-color: rgba(0, 47, 75, 0.8);
+            color: white;
+            margin-bottom: 40px; /* Add spacing between sections */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .provides-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .provides-section img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            animation: scaleIn 0.6s ease forwards;
+        }
+
+        .provides-section h2 {
+            font-size: 2.5rem;
+            color: cyan;
+            text-shadow: 0px 0px 10px cyan;
+            margin-bottom: 20px;
+        }
+
+        .provides-section p {
+            font-size: 1.5rem;
+            color: #d1faff;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* Card section styles */
+        .container {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            margin-bottom: 40px; /* Space below cards section */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card {
+            display: flex;
+            background: rgba(0, 47, 75, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+            margin: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 60px rgba(0, 255, 255, 0.6);
+        }
+
+        .card img {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-content h2 {
+            margin-top: 0;
+            font-size: 30px;
+            color: cyan;
+            text-shadow: 0px 0px 10px cyan;
+        }
+
+        .card-content p {
+            font-size: 18px;
+            color: #d1faff;
+        }
+
+        .card-content button {
+            background: linear-gradient(135deg, #00d4ff, #009dc4);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 30px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 0px 20px rgba(0, 212, 255, 0.6);
+            align-self: flex-start;
+        }
+
+        .card-content button:hover {
+            background: linear-gradient(135deg, #009dc4, #00d4ff);
+            transform: translateY(-5px);
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #002f4b;
+            color: cyan;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0px -10px 30px rgba(0, 255, 255, 0.4);
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+                max-width: 100%;
+            }
+
+            .card img {
+                width: 100%;
+            }
+
+            .card-content {
+                text-align: center;
+            }
+
+            .provides-section img {
+                max-width: 100%;
+            }
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>نظام توقع الصحة</h1>
+        <nav>
+            <ul>
+                <li><a href="/">الرئيسية</a></li>
+                <li><a href="/anemia">توقع أمراض الدم</a></li>
+                <li><a href="/diabetes">توقع السكري</a></li>
+                <li><a href="/malaria">كشف الملاريا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- New Section: What the Page Provides -->
+    <section class="provides-section">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/012/414/738/small_2x/male-doctor-character-illustration-png.png" alt="Happy Cartoon Doctor">
+        <h2>ماذا يوفر نظام توقع الصحة؟</h2>
+        <p>يوفر نظامنا مجموعة من الأدوات الذكية لتوقع أمراض الدم، السكري، والملاريا، بناءً على التحاليل الطبية والأعراض. قم بإجراء الاختبارات لمعرفة مستوى الخطر لديك.</p>
+    </section>
+
+    <!-- Cards Section -->
+  
+    <div class="container">
+        <div class="card" id="anemia">
+            <img src="https://continentalhospitals.com/uploads/mceu_98999565211701163526573.jpg" alt="أنيميا">
+            <div class="card-content">
+                <h2>توقع امراض الدم</h2>
+                <p>يساعد هذا النظام في توقع احتمالية الإصابة بفقر الدم بناءً على نتائج التحاليل.</p>
+                <button onclick="location.href='/anemia'">قم بإجراء الاختبار</button>
+            </div>
+        </div>
+      
+        <div class="card" id="diabetes">
+            <img src="https://d18yrmqbzi0q7a.cloudfront.net/wp-content/uploads/diabetes-symptoms-and-treatment.jpg" alt="السكري">
+            <div class="card-content">
+                <h2>توقع السكري</h2>
+                <p>يساعد هذا النظام في توقع احتمالية الإصابة بالسكري بناءً على معايير صحية مختلفة.</p>
+                <button onclick="location.href='/diabetes'">قم بإجراء الاختبار</button>
+            </div>
+        </div>
+
+        <div class="card" id="malaria">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Malaria.jpg/600px-Malaria.jpg" alt="الملاريا">
+            <div class="card-content">
+                <h2>كشف الملاريا</h2>
+                <p>يستخدم نظام كشف الملاريا الخاص بنا خوارزميات متقدمة لتحليل الأعراض وتقديم تقييم لمستوى الخطر.</p>
+                <button onclick="location.href='/malaria'">قم بإجراء الاختبار</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 نظام توقع الصحة. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        // Intersection Observer to reveal sections on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        // Observe the sections and container
+        document.querySelectorAll('.provides-section, .container').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+
+</html>

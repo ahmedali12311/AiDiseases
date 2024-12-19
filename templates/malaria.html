@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل الملاريا</title>
+    <link rel="stylesheet" href="../static/malaria.css">
+</head>
+<body>
+    <header>
+        <h1>تحليل الملاريا</h1>
+        <nav>
+            <ul>
+                <li><a href="/">الرئيسية</a></li>
+                <li><a href="/anemia">توقع أمراض الدم</a></li>
+                <li><a href="/diabetes">توقع السكري</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <form action="/malaria" method="post" enctype="multipart/form-data">
+            <label class="custom-file-upload">
+                <input type="file" name="file" accept="image/*" required id="file-input">
+                اختر صورة (لرفع الصور)
+            </label>
+            <div id="image-preview" class="image-preview">
+                <img id="preview-img" src="" alt="Image Preview" />
+                <p id="image-name">لا توجد صورة مختارة</p>
+            </div>
+            <button type="submit">توقع الملاريا</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 نظام توقع الصحة. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const previewImg = document.getElementById('preview-img');
+        const imageName = document.getElementById('image-name ');
+        const imagePreview = document.getElementById('image-preview');
+
+        fileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    previewImg.src = event.target.result;
+                    imageName.textContent = file.name;
+                    imagePreview.style.display = 'flex';
+                }
+                reader.readAsDataURL(file);
+            } else {
+                previewImg.src = '';
+                imageName.textContent = 'لا توجد صورة مختارة';
+                imagePreview.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

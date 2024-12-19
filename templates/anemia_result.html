@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتيجة فقر الدم</title>
+    <link rel="stylesheet" href="../static/anemiaresult.css"> <!-- Link to your new CSS file -->
+</head>
+<body>
+  
+    <div class="container">
+        <h2>نتيجة التوقع</h2>
+        <p>التشخيص المتوقع هو: <strong>{{ prediction }}</strong></p>
+        <button onclick="window.history.back();" class="back-button">اعادة التحليل</button>
+        <button onclick="location.href='/'" class="back-button">الصفحه الرئيسية</button>
+    </div>
+</body>
+</html>

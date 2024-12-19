@@ -1,0 +1,172 @@
+/* Global styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0d0d0d, #002f4b);
+    color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Allow vertical stacking */
+    min-height: 100vh; /* Ensure full height of the viewport */
+    overflow: auto;
+}
+
+header {
+    position: relative;
+    background: linear-gradient(135deg, rgba(0, 47, 75, 0.9), rgba(0, 47, 75, 0.5));
+    color: cyan; /* Bright cyan for a modern feel */
+    text-align: center;
+    padding: 20px 0; /* Adjusted padding for header */
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+header h1 {
+    font-size: 2.5rem; /* Adjusted font size */
+    margin: 0;
+    text-shadow: 0 0 20px cyan; /* Glowing text effect */
+}
+
+/* Navigation styles */
+header nav {
+    width: 100%; /* Full width */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center navigation items */
+    gap: 30px; /* Space between nav items */
+    flex-direction: row-reverse; /* Reverse the order of items */
+}
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    color: cyan; /* Bright cyan */
+    text-decoration: none;
+    font-size: 1.2rem; /* Font size for nav items */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+header nav ul li a:hover {
+    color: #fff; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.container {
+    background: rgba(0, 47, 75, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-height: 400px;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+    margin: auto; /* Center the container horizontally */
+    flex: 1; /* Allow the container to grow and take available space */
+    display: flex; /* Use flexbox for inner content */
+    flex-direction: column; /* Stack inner elements vertically */
+    justify-content: center; /* Center inner content vertically */
+    align-items: center; /* Center inner content horizontally */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    color: cyan;
+    text-shadow: 0px 0px 15px cyan;
+    font-size: 36px;
+}
+
+button {
+    background: linear-gradient(135deg, #00d4ff, #009dc4);
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px rgba(0, 212, 255, 0.6);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #009dc4, #00d4ff);
+    transform: translateY(-5px);
+}
+
+.custom-file-upload {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px dashed #00d4ff;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+
+.image-preview {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.image-preview img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-preview p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: cyan;
+}
+
+footer {
+    background: linear-gradient(135deg, rgba(0, 47, 75, 0.9), rgba(0, 47, 75, 0.5));
+    color: cyan;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.7);
+}
+
+footer p {
+    margin: 0;
+    font-size: 18px;
+}

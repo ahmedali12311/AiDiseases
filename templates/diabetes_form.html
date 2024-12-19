@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توقع السكري</title>
+    <link rel="stylesheet" href="../static/diabetes.css"> <!-- Link to anemia-specific CSS -->
+</head>
+<body>
+    <header>
+        <h1>تحليل الداء السكري</h1>
+
+        <nav>
+            <ul>
+                <li><a href="/">الرئيسية</a></li>
+                <li><a href="/anemia">توقع أمراض الدم</a></li>
+                <li><a href="/malaria">كشف الملاريا</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card">
+            <form action="/diabetes" method="POST" class="anemia-form"> <!-- Changed class to anemia-form -->
+                <label for="age">العمر:</label>
+                <input type="number" id="age" name="age" required min="1">
+
+                <label for="gender">الجنس (ذكر = نعم، أنثى = لا):</label>
+                <select id="gender" name="gender" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="polyuria">التبول المفرط (نعم أو لا):</label>
+                <select id="polyuria" name="polyuria" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="polydipsia">العطش المفرط (نعم أو لا):</label>
+                <select id="polydipsia" name="polydipsia" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="sudden_weight_loss">فقدان الوزن المفاجئ (نعم أو لا):</label>
+                <select id="sudden_weight_loss" name="sudden_weight_loss" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="weakness">الضعف (نعم أو لا):</label>
+                <select id="weakness" name="weakness" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="polyphagia">فرط الشهية (نعم أو لا):</label>
+                <select id="polyphagia" name="polyphagia" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="genital_thrush">العدوى التناسلية (نعم أو لا):</label>
+                <select id="genital_thrush" name="genital_thrush" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="visual_blurring">تشوش الرؤية (نعم أو لا):</label>
+                <select id="visual_blurring" name="visual_blurring" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="itching">الحكة (نعم أو لا):</label>
+                <select id="itching" name="itching" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="irritability">التهيج (نعم أو لا):</label>
+                <select id="irritability" name="irritability" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="delayed_healing">تأخر الشفاء (نعم أو لا):</label>
+                <select id="delayed_healing" name="delayed_healing" required>
+                    <option value="1">ن عم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="partial_paresis">شلل جزئي (نعم أو لا):</label>
+                <select id="partial_paresis" name="partial_paresis" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="muscle_stiffness">تصلب العضلات (نعم أو لا):</label>
+                <select id="muscle_stiffness" name="muscle_stiffness" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="alopecia">تساقط الشعر (نعم أو لا):</label>
+                <select id="alopecia" name="alopecia" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <label for="obesity">السمنة (نعم أو لا):</label>
+                <select id="obesity" name="obesity" required>
+                    <option value="1">نعم</option>
+                    <option value="0">لا</option>
+                </select>
+
+                <button type="submit">التحليل</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
