@@ -1,7 +1,6 @@
 # My Project
 
-This is a description of my project.
-
+Images of the project:
 ## Screenshots
 
 ![Screenshot 1](Screenshot%202024-12-19%20170251.png)
